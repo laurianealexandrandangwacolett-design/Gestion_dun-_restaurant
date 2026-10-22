@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block titre %}Réserver : Chez Ngono{% endblock %}
+
+{% block contenu %}
+<h2>Réserver une table</h2>
+<form method="post" id="form-reservation">
+    <label for="nom">Nom</label>
+    <input id="nom" name="nom" value="{{ donnees.get('nom', '') }}" required>
+
+       <label for="telephone">Téléphone</label>
+    <input id="telephone" name="telephone" type="tel" value="{{ donnees.get('telephone', '') }}" required>
+
+    <label for="date">Date</label>
+    <input id="date" name="date" type="date" value="{{ donnees.get('date', '') }}" required>
+
+    <label for="service">Service</label>
+    <select id="service" name="service">
+        <option value="midi">Midi</option>
+        <option value="soir">Soir</option>
+    </select>
+
+        <label for="personnes">Personnes</label>
+    <input id="personnes" name="personnes" type="number" min="1" max="20" value="{{ donnees.get('personnes', 2) }}">
+
+    <button type="submit">Réserver</button>
+</form>
+<p id="erreur"></p>
+{% endblock %}

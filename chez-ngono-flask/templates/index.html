@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block titre %}Chez Ngono : cuisine camerounaise à Douala{% endblock %}
+
+{% block contenu %}
+<section class="banniere">
+    <h1>La vraie cuisine de chez nous</h1>
+    <p>Ndolé, poulet DG, poisson braisé : préparés chaque jour avec les produits du marché.</p>
+    <a class="bouton" href="{{ url_for('reserver') }}">Réserver une table</a>
+</section>
+
+<section>
+    <h2>Nos spécialités</h2>
+    <div class="liste-plats">
+        <article class="carte-plat">
+            <img src="{{ url_for('static', filename='images/ndole.jpg') }}" alt="Assiette de ndolé aux crevettes">
+            <h3>Ndolé aux crevettes</h3>
+            <p class="prix">4 000 FCFA</p>
+        </article>
+        <article class="carte-plat">
+            <img src="{{ url_for('static', filename='images/poulet-dg.jpg') }}" alt="Poulet DG avec des plantains mûrs">
+            <h3>Poulet DG</h3>
+            <p class="prix">4 500 FCFA</p>
+        </article>
+        <article class="carte-plat">
+            <img src="{{ url_for('static', filename='images/poisson.jpg') }}" alt="Poisson braisé et bâtons de manioc">
+            <h3>Poisson braisé</h3>
+            <p class="prix">5 000 FCFA</p>
+        </article>
+    </div>
+</section>
+
+<section id="horaires">
+    <h2>Horaires d'ouverture</h2>
+    <table>
+        <caption>Horaires</caption>
+        <thead>
+            <tr><th>Jour</th><th>Midi</th><th>Soir</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Lundi au vendredi</td><td>11 h 30 à 15 h</td><td>18 h à 23 h</td></tr>
+            <tr><td>Samedi</td><td colspan="2">11 h 30 à minuit</td></tr>
+            <tr><td>Dimanche</td><td colspan="2">Fermé</td></tr>
+        </tbody>
+    </table>
+</section>
+{% endblock %}

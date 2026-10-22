@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block titre %}Menu : Chez Ngono{% endblock %}
+
+{% block contenu %}
+<h2>Notre menu</h2>
+
+<button class="filtre" data-categorie="tout">Tout</button>
+<button class="filtre" data-categorie="entree">Entrées</button>
+<button class="filtre" data-categorie="plat">Plats</button>
+<button class="filtre" data-categorie="boisson">Boissons</button>
+
+<ul id="liste-menu">
+    {% for p in plats %}
+        <li>{{ p.nom }} : {{ p.prix }} FCFA</li>
+    {% endfor %}
+</ul>
+{% endblock %}

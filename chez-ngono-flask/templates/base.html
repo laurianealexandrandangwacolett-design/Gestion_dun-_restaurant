@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block titre %}Chez Ngono{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <p class="logo">Chez Ngono</p>
+        <button id="bouton-menu" aria-label="Ouvrir le menu">&#9776;</button>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('accueil') }}">Accueil</a></li>
+                <li><a href="{{ url_for('menu') }}">Menu</a></li>
+                <li><a href="{{ url_for('reserver') }}">Réserver</a></li>
+                <li><a href="{{ url_for('reservations') }}">Réservations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for categorie, message in messages %}
+                <p class="flash {{ categorie }}">{{ message }}</p>
+            {% endfor %}
+        {% endwith %}
+
+        {% block contenu %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>Chez Ngono, rue Joss, Akwa, Douala</p>
+        <p><a href="tel:+237690000000">690 00 00 00</a> ·
+           <a href="mailto:contact@chezngono.cm">contact@chezngono.cm</a></p>
+    </footer>
+</body>
+</html>

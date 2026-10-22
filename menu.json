@@ -1,0 +1,8 @@
+[
+  { "nom": "Beignets haricots", "prix": 1000, "categorie": "entree" },
+  { "nom": "Ndolé aux crevettes", "prix": 4000, "categorie": "plat" },
+  { "nom": "Poulet DG", "prix": 4500, "categorie": "plat" },
+  { "nom": "Poisson braisé", "prix": 5000, "categorie": "plat" },
+  { "nom": "Jus de foléré", "prix": 500, "categorie": "boisson" },
+  { "nom": "Jus de gingembre", "prix": 500, "categorie": "boisson" }
+]

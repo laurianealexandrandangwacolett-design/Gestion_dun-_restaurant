@@ -1,0 +1,15 @@
+TP 6 : Application Flask du restaurant Chez Ngono
+Auteur : MBETMI NDANGWA COLETTE LAURIANNE
+
+Lancer le projet (Windows) :
+1. Ouvrir un terminal dans le dossier du projet
+2. python -m venv venv
+3. venv\Scripts\activate
+4. pip install -r requirements.txt
+5. python app.py
+6. Ouvrir http://127.0.0.1:5000 dans le navigateur
+
+Linux / macOS : à l'étape 3, utiliser source venv/bin/activate
+
+La base restaurant.db est déjà fournie. Pour la recréer (efface les
+réservations) : python -c "import app; app.init_db()"

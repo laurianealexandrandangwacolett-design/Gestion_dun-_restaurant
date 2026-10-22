@@ -1,0 +1,156 @@
+/* ---------- Réglages généraux ---------- */
+:root {
+  --vert: #1B4332;
+  --vert-clair: #2D6A4F;
+  --accent: #C8553D;
+  --accent-fonce: #A3402B;
+  --fond: #FFF8F0;
+  --carte: #FFFFFF;
+  --bordure: #EADFD2;
+  --texte: #2B2B2B;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  line-height: 1.7;
+  color: var(--texte);
+  background: var(--fond);
+}
+
+h1, h2, h3 { color: var(--vert); line-height: 1.2; }
+h2 { border-left: 6px solid var(--accent); padding-left: 0.6rem; }
+img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
+main { max-width: 70rem; margin: 0 auto; padding: 1rem; }
+
+/* ---------- En-tête et menu (mobile par défaut) ---------- */
+header {
+  background: var(--vert);
+  color: white;
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 4px solid var(--accent);
+}
+
+.logo { margin: 0; font-size: 1.6rem; font-weight: bold; letter-spacing: 1px; }
+
+#bouton-menu {
+  background: none; border: none; color: white;
+  font-size: 1.8rem; cursor: pointer;
+}
+
+nav { width: 100%; display: none; }
+nav.ouvert { display: block; }
+nav ul { list-style: none; margin: 0; padding: 0.5rem 0 0; display: flex; flex-direction: column; gap: 0.3rem; }
+nav a { display: block; padding: 0.6rem 0; color: white; text-decoration: none; }
+nav a:hover { color: #FFD6A5; }
+
+/* ---------- Bannière et boutons ---------- */
+.banniere {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  background: #FDEBD8;
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.bouton {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.bouton:hover { background: var(--accent-fonce); }
+
+/* ---------- Cartes des plats ---------- */
+.liste-plats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.carte-plat {
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.prix { color: var(--accent); font-weight: bold; font-size: 1.1rem; }
+
+/* ---------- Tableau ---------- */
+table { border-collapse: collapse; width: 100%; background: var(--carte); border-radius: 8px; overflow: hidden; }
+caption { padding: 0.5rem; font-style: italic; }
+th, td { border: 1px solid var(--bordure); padding: 0.6rem; text-align: left; }
+th { background: var(--vert-clair); color: white; }
+
+/* ---------- Page menu : filtres et liste ---------- */
+.filtre {
+  background: white;
+  border: 2px solid var(--vert-clair);
+  color: var(--vert-clair);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.filtre:hover { background: var(--vert-clair); color: white; }
+
+#liste-menu li { padding: 0.3rem 0; }
+
+/* ---------- Formulaire de réservation ---------- */
+form p { margin: 0 0 0.8rem; }
+label { display: block; font-weight: bold; margin-bottom: 0.2rem; }
+input, select, textarea {
+  width: 100%;
+  max-width: 28rem;
+  padding: 0.5rem;
+  border: 1px solid var(--bordure);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+form button[type="submit"] {
+  background: var(--vert-clair);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+form button[type="submit"]:hover { background: var(--vert); }
+#erreur { color: #B00020; font-weight: bold; }
+
+/* ---------- Pied de page ---------- */
+footer { text-align: center; padding: 1.2rem; background: var(--vert); color: white; margin-top: 2rem; }
+footer a { color: #FFD6A5; }
+
+/* ===== Tablette : à partir de 768 px ===== */
+@media (min-width: 768px) {
+  .liste-plats { grid-template-columns: repeat(2, 1fr); }
+  #bouton-menu { display: none; }
+  nav { display: block; width: auto; }
+  nav ul { flex-direction: row; gap: 1.5rem; padding-top: 0; }
+}
+
+/* ===== Ordinateur : à partir de 992 px ===== */
+@media (min-width: 992px) {
+  .liste-plats { grid-template-columns: repeat(3, 1fr); }
+  .banniere h1 { font-size: 2.8rem; }
+}
+
+/* ===== Impression ===== */
+@media print {
+  nav, #bouton-menu, .bouton { display: none; }
+  body { background: white; }
+}

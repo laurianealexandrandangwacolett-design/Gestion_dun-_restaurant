@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Réservez une table chez Chez Ngono à Douala.">
+  <title>Contact et réservation : Chez LAURY</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <p class="logo">Chez LAURY</p>
+    <button id="bouton-menu" aria-label="Ouvrir le menu">&#9776;</button>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact et réservation</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Réserver une table</h1>
+    <form id="form-reservation" action="#" method="post">
+      <p>
+        <label for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" required>
+      </p>
+      <p>
+        <label for="telephone">Téléphone</label>
+        <input type="tel" id="telephone" name="telephone" required>
+      </p>
+      <p>
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required>
+      </p>
+      <p>
+        <label for="personnes">Nombre de personnes</label>
+        <input type="number" id="personnes" name="personnes" min="1" max="20" value="2" required>
+      </p>
+      <p>
+        <label for="service">Service</label>
+        <select id="service" name="service">
+          <option value="midi">Midi</option>
+          <option value="soir">Soir</option>
+        </select>
+      </p>
+      <p>
+        <label for="remarques">Remarques</label>
+        <textarea id="remarques" name="remarques" rows="4"></textarea>
+      </p>
+      <button type="submit">Réserver</button>
+    </form>
+    <p id="erreur"></p>
+  </main>
+  <footer>
+    <p>Chez LAURY, PK17, Douala</p>
+<p><a href="mailto:contact@chezlaury.cm">contact@chezlaury.cm</a></p>
+</body>
+</html>
